@@ -2,6 +2,10 @@ import java.util.Enumeration;
 
 public class HtmlStatement extends Statement {
     public String value(Customer aCustomer) {
+        return getResultString(aCustomer);
+    }
+
+     public String getResultString(Customer aCustomer) {
         Enumeration rentals = aCustomer.getRentals();
         String result = "<H1>Rentals for <EM>" + aCustomer.getName() +
         "</EM></H1><P>\n";
@@ -18,5 +22,5 @@ public class HtmlStatement extends Statement {
         String.valueOf(aCustomer.getTotalFrequentRenterPoints()) +
         "</EM> frequent renter points<P>";
         return result;
-     }
+    }
 }

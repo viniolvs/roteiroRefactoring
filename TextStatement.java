@@ -2,9 +2,12 @@ import java.util.Enumeration;
 
 public class TextStatement extends Statement {
     public String value(Customer aCustomer) {
+        return getResultString(aCustomer);
+    }
+
+    public String getResultString(Customer aCustomer) {
         Enumeration rentals = aCustomer.getRentals();
-        String result = "Rental Record for " + aCustomer.getName() +
-        "\n";
+        String result = "Rental Record for " + aCustomer.getName() + "\n";
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
             //show figures for this rental
